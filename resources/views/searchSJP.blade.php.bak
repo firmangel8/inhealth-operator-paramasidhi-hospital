@@ -1,0 +1,58 @@
+@extends('layout.app')
+@section('content')
+<div class="content">
+      <div class="container-fluid">
+          <div class="row">
+            
+            <div class="col-md-12 col-lg-12">
+              <div class="card">
+                <div class="card-header card-header-info">
+                  <h4 class="card-title">Identitas Peserta Inhealth</h4>
+                  <p class="card-category"> Inhealth Card Identity</p>
+                  
+                </div>
+                <div class="card-body">
+               
+                
+                    <div class="row">
+                      <div class="col-md-12 col-lg-12">
+                        <table id="sjp_table" class="table table-bordered" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>NO. SJP</th>
+                                    <th>NAMA</th>
+                                    <th>NO. KARTU</th>
+                                    <th>KD. POLI</th>
+                                    <th>PLAN</th>
+                                    <th>KELAS</th>
+                                    <th>TGL. RUJUKAN</th>
+                                    <th>OPTION</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                      </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-12">
+              @if(session('message'))
+                <div class="alert alert-primary">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <i class="material-icons">close</i>
+                    </button>
+                    <span>
+                      <b> Perhatian! </b> {{ Session::get('message') }}"</span>
+                      {{ Session::forget('message') }}
+                      {{ Session::save() }}
+                </div>
+              @endif
+            </div>
+      </div>
+</div>
+
+
+
+
+@endsection
